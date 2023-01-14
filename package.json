@@ -6,7 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "node",
+    "test",
+    "clean code",
+    "typescript"
+  ],
+  "author": "Matheus Rosmaninho <matheusrosmano@gmail.com",
+  "license": "ISC",
+  "repository": {
+    "url": "github.com/matheusrosmano/clean-code-node"
+  }
 }
