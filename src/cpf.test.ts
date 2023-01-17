@@ -10,3 +10,7 @@ test("Valid cpf with mask", (t) => {
 test("Valid cpf without mask", (t) => {
     assert.strictEqual(validate("91278583084"), true)
 })
+
+test("Invalid cpf with mask", (t) => {
+    assert.strictEqual(validate("11122233345"), false)
+})
