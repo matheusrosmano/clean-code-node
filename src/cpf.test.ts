@@ -32,8 +32,7 @@ test("Invalid cpf without mask", (t) => {
 
 test("Invalid cpf with less caracter", (t) => {
     try {
-        const cpf = new CPF("1112225554")
-        cpf.isValid()
+        new CPF("1112225554")
     } catch(e: any) {
         assert.equal(e.message, "CPF length: 11 or 14")
     }
@@ -41,8 +40,7 @@ test("Invalid cpf with less caracter", (t) => {
 
 test("Invalid cpf with more caracter", (t) => {
     try {
-        const cpf = new CPF("1221141112225554")
-        cpf.isValid()
+        new CPF("1221141112225554")
     } catch(e: any) {
         assert.equal(e.message, "CPF length: 11 or 14")
     }
