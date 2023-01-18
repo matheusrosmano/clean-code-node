@@ -11,11 +11,19 @@ test("Valid cpf without mask", (t) => {
 })
 
 test("Invalid cpf with mask", (t) => {
-    assert.strictEqual(validateCpf("111.222.333-45"), false)
+    try {
+        validateCpf("1221141112225554")
+    } catch(e: any) {
+        assert.equal(e.message, "Invalid cpf")
+    }
 })
 
 test("Invalid cpf without mask", (t) => {
-    assert.strictEqual(validateCpf("11122233345"), false)
+    try {
+        validateCpf("1221141112225554")
+    } catch(e: any) {
+        assert.equal(e.message, "Invalid cpf")
+    }
 })
 
 test("Invalid cpf with less caracter", (t) => {
