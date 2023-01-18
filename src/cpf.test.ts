@@ -1,16 +1,35 @@
 import test from 'node:test'
-import { isAssertClause } from 'typescript'
 import * as assert from "assert";
-import {validate} from "./cpf";
+import {validateCpf} from "./cpf";
 
 test("Valid cpf with mask", (t) => {
-    assert.strictEqual(validate("912.785.830-84"), true)
+    assert.strictEqual(validateCpf("912.785.830-84"), true)
 })
 
 test("Valid cpf without mask", (t) => {
-    assert.strictEqual(validate("91278583084"), true)
+    assert.strictEqual(validateCpf("91278583084"), true)
 })
 
 test("Invalid cpf with mask", (t) => {
-    assert.strictEqual(validate("11122233345"), false)
+    assert.strictEqual(validateCpf("111.222.333-45"), false)
+})
+
+test("Invalid cpf without mask", (t) => {
+    assert.strictEqual(validateCpf("11122233345"), false)
+})
+
+test("Invalid cpf with less caracter", (t) => {
+    try {
+        validateCpf("1112225554")
+    } catch(e: any) {
+        assert.equal(e.message, "CPF length: 11 or 14")
+    }
+})
+
+test("Invalid cpf with more caracter", (t) => {
+    try {
+        validateCpf("1221141112225554")
+    } catch(e: any) {
+        assert.equal(e.message, "CPF length: 11 or 14")
+    }
 })
