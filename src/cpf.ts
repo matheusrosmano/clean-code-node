@@ -8,7 +8,7 @@ export class CPF {
   }
 
   isValid(): boolean {
-      const cpf: string = this.cpf.replace(/\.|-/g, '')
+    const cpf: string = this.cpf.replace(/\D/g, "");
 
       try {
           let d1, d2;
