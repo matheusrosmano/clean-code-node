@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:cpf": "ts-node src/cpf.test.ts",
+    "test": "ts-node src/*",
     "tsc:init": "tsc --init"
   },
   "keywords": [
